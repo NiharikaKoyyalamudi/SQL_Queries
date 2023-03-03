@@ -1,0 +1,99 @@
+1.Create a database name - “Employee”.
+CREATE DATABASE Employee;
+
+
+2.Create a table name - "Employee_Details":
+----------------------------------------
+SQL> create table Employee_Details (
+  2      Emp_id number(5),
+  3      Emp_name varchar2(20) ,
+  4      Job_name varchar2(20) ,
+  5      Manager_id number(5),
+  6      Hire_date date,
+  7      Salary number(5),
+  8      Dep_id number(5),
+  9      PRIMARY KEY (Emp_id)
+ 10  );
+
+Table created.
+
+
+
+
+3.Insert 10 details in the "Employee_Details" table:
+---------------------------------------------------
+ SQL>insert into Employee_Details values(68310,'Raj', 'Manager', 1, '11-Mar-2023', 10000, 1);
+1 row created.
+
+ SQL>insert into Employee_Details values(68311,'Hardik', 'Data Analyst', 1, '21-Mar-1992', 20000, 1);
+1 row created.
+
+ SQL>insert into Employee_Details values(68312,'Krithi', 'Developer', 1, '04-Apr-1990', 30000, 1);
+1 row created.
+
+ SQL>insert into Employee_Details values(68313,'Rohit', 'Data Scientist', 2, '07-Jun-1994', 40000, 2);
+1 row created.
+
+ SQL>insert into Employee_Details values(68314,'Abhi', 'WebDesigner', 2, '16-Jul-1992', 50000, 2);
+1 row created.
+
+ SQL>insert into Employee_Details values(68315,'Neha', 'Developer', 2, '09-aug-1992', 60000, 2);
+1 row created.
+
+ SQL>insert into Employee_Details values(68316,'Bannu', 'Data Analyst', 3, '08-jan-1998', 70000, 3);
+1 row created.
+
+ SQL>insert into Employee_Details values(68317,'Sumith', 'WebDesigner', 3, '21-nov-1994', 80000, 3);
+1 row created.
+
+ SQL>insert into Employee_Details values(68318,'Rakesh', 'Developer', 3, '30-dec-1990', 90000, 3);
+1 row created.
+
+ SQL>insert into Employee_Details values(68319,'Mr.Singh', 'President', 3, '18-nov-1991', 60000, 3);
+1 row created.
+
+
+4.Find the salaries of all the employees from the “Employee Details” table.
+----------------------------------------------------------------------------
+SQL> select Salary FROM Employee_Details;
+
+    SALARY
+----------
+     10000
+     20000
+     30000
+     40000
+     50000
+     60000
+     70000
+     80000
+     90000
+     60000
+
+10 rows selected.
+
+
+5.Find the unique designations of the employees from the table:
+--------------------------------------------------------------
+SQL> select DISTINCT Job_name FROM Employee_Details;
+
+JOB_NAME
+---------------------------
+Data Scientist
+Analyst
+WebDesigner
+Designer
+Data Analyst
+Developer
+President
+
+7 rows selected.
+
+
+6.Change the salary where the emp_name is "Raj":
+--------------------------------------------------
+SQL> update Employee_Details
+  2  set Salary = 15000
+  3  where Emp_name = 'Raj';
+
+1 row updated.

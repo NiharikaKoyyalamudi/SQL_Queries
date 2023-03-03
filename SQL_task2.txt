@@ -1,0 +1,81 @@
+1.Create a database name - "Football":
+CREATE DATABASE Football;
+
+2.Create a table name - "Football_Venue":
+-----------------------------------------
+USE Football;
+SQL> create table Football_Venue (
+  2      venue_id number(5),
+  3      venue_name number(50),
+  4      city_id number(5),
+  5      capacity number(20),
+  6      PRIMARY KEY (venue_id)
+  7  );
+
+Table created.
+
+
+3.Insert 10 details in the "Football Venue" table:
+----------------------------------------------------
+
+SQL> insert into Football_Venue values(1,'West Indies', 30, 10000);
+1 row created.
+
+SQL> insert into Football_Venue values(2,'Greenland', 31, 20000);
+1 row created.
+
+SQL> insert into Football_Venue values(3,'Austria',32, 30000);
+1 row created.
+
+SQL> insert into Football_Venue values(4,'Columbia', 33, 40000);
+1 row created.
+
+SQL> insert into Football_Venue values(5,'France', 34, 50000);
+1 row created.
+
+SQL> insert into Football_Venue values(6,'Singapore', 35, 60000);
+1 row created.
+
+SQL> insert into Football_Venue values(7,'Europe', 36, 70000);
+1 row created.
+
+SQL> insert into Football_Venue values(8,'Srilanka', 37, 90000);
+1 row created.
+
+SQL> insert into Football_Venue values(9,'India', 38, 45000);
+1 row created.
+
+SQL> insert into Football_Venue values(10,'Australia', 39, 55000);
+1 row created.
+
+
+
+4.Count the number of venues of the football world cup:
+--------------------------------------------------------
+SQL> select count(*) from Football_Venue;
+
+  COUNT(*)
+----------
+        10
+
+
+5.List all the venue names and capacities in the format of "Location" and "Volume":
+-----------------------------------------------------------------------------------
+SQL> alter table Football_Venue
+  2  rename column venue_name to Location;
+
+Table altered.
+
+SQL> alter table Football_Venue
+  2  rename column capacity to Volume;
+
+Table altered.
+
+
+6. Delete all the details where venue_name is equal to “Australia”.
+------------------------------------------------------------------
+SQL> delete from Football_Venue where venue_name='Australia';
+
+1 row deleted.
+
+
